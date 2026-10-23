@@ -9,7 +9,11 @@ It aims to let users practice japanese content, and features 2 modes currently (
 It currently uses a simple Tkinter GUI, nothing fancy but does the job.
 
 > [!NOTE]
-  > The material in the program get updated as I learn the language, there is no guarantee that it will be correct and it will only contain information as i learn it, however the txt documents are there for if you want to add more content or alter current content
+> The material in the program get updated as I learn the language, there is no guarantee that it will be correct and it will only contain information as i learn it, however the txt documents are there for if you want to add more content or alter current content
+
+> [!IMPORTANT]
+> This project was not originally going to be public, as a result, any poorly written code is due to the original plan for the project to be a quick solution to an issue i had that i wasnt going to share
+
 ## Features
 
 - **Writing practice**, it gives user romaji and allows the user to write the character and then reveal the answer, it also allows users to press enter to reveal the answer and enter again to press next, allows for quick practice instead of having to move the mouse 
