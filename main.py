@@ -98,12 +98,12 @@ class App:
         areasLabel = tk.Label(self.root, text="Areas to study", font=("Arial", 20, "bold"), bg="gray80")
         areasLabel.pack(pady=0)
 
-        self.hiraganaRadioVal = tk.BooleanVar(value=True)
+        self.hiraganaRadioVal = tk.BooleanVar(value=False)
 
         hiraganaCheckButton = tk.Checkbutton(self.root, text="Hiragana", variable=self.hiraganaRadioVal, font=("Arial", 15), bg="gray80")
         hiraganaCheckButton.pack(pady=5)
 
-        self.katakanaRadioVal = tk.BooleanVar(value=True)
+        self.katakanaRadioVal = tk.BooleanVar(value=False)
 
         katakanaCheckButton = tk.Checkbutton(self.root, text="Katakana", variable=self.katakanaRadioVal, font=("Arial", 15), bg="gray80")
         katakanaCheckButton.pack(pady=5)
