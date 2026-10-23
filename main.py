@@ -1,5 +1,9 @@
 import tkinter as tk
 import random
+from pathlib import Path
+from os.path import join
+
+BASE_DIR = Path(__file__).resolve().parent
 
 class lists:
 
@@ -14,7 +18,7 @@ class lists:
         self.hiragana = {}
         self.katakana = {}
 
-        with open("groups/hiragana.txt", 'r', encoding="utf-8") as file:
+        with open(join(BASE_DIR, "groups/hiragana.txt"), 'r', encoding="utf-8") as file:
             hiragana = file.readlines()
 
         for kana in hiragana:
@@ -22,7 +26,7 @@ class lists:
             kana = kana.split(";")
             self.hiragana[kana[0]] = kana[1].strip().split(",")
 
-        with open("groups/katakana.txt", 'r', encoding="utf-8") as file:
+        with open(join(BASE_DIR, "groups/katakana.txt"), 'r', encoding="utf-8") as file:
             katakana = file.readlines()
 
         for kana in katakana:
@@ -65,6 +69,9 @@ class lists:
 
 
 class App:
+
+    japaneseFont  = "UD Digi Kyokasho N"
+    
     def __init__(self):
         self.root = tk.Tk()
         self.groups = lists()
@@ -182,7 +189,7 @@ class App:
         revealButton = tk.Button(self.root, text="Reveal", font=("Arial", 20, "bold"), bg="gray80")
         revealButton.pack(pady=10)
         
-        revealLabel = tk.Label(self.root, text=kana, font= ("UD Digi Kyokasho N", 70, "bold"), bg="black", width=10)
+        revealLabel = tk.Label(self.root, text=kana, font= (self.japaneseFont, 70, "bold"), bg="black", width=10)
         revealLabel.pack()
 
         def revealAndUnbind():
@@ -204,7 +211,7 @@ class App:
     def kanaToEngTest(self, kana:str, engs:list):
         self.root.bind("<Return>", lambda e: self.checkAnswer(kana, engs))
 
-        label = tk.Label(self.root, text=kana, font= ("UD Digi Kyokasho N", 130, "bold"), bg="grey80")
+        label = tk.Label(self.root, text=kana, font= (self.japaneseFont, 130, "bold"), bg="grey80")
         label.pack(pady=30)
 
         self.entryBox = tk.Entry(self.root, width=20, font=("Arial", 20, "bold"), justify="center")
@@ -223,7 +230,7 @@ class App:
 
         if answer in engs:
             self.root.config(bg="green")
-            label = tk.Label(self.root, text=kana, font= ("UD Digi Kyokasho N", 130, "bold"), bg="green")
+            label = tk.Label(self.root, text=kana, font= (self.japaneseFont, 130, "bold"), bg="green")
             label.pack(pady=20)
             label = tk.Label(self.root, text="/".join(engs), font= ("Arial", 30, "bold"), bg="green")
             label.pack()
@@ -231,7 +238,7 @@ class App:
 
         else:
             self.root.config(bg="red")
-            label = tk.Label(self.root, text=kana, font= ("UD Digi Kyokasho N", 120, "bold"), bg="red")
+            label = tk.Label(self.root, text=kana, font= (self.japaneseFont, 120, "bold"), bg="red")
             label.pack()
             label = tk.Label(self.root, text="/".join(engs), font= ("Arial", 40, "bold"), bg="red")
             label.pack()
