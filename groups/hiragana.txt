@@ -34,8 +34,8 @@
 め;me
 も;mo
 や;ya
-よ;yu
-ゆ;yo
+よ;yo
+ゆ;yu
 ら;ra
 り;ri
 る;ru
